@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  clickhouse:
+    image: clickhouse/clickhouse-server:24.8
+    container_name: clickhouse-lts
+    ports:
+      - "8124:8123"   
+      - "9001:9000"   
+    volumes:
+      - clickhouse_data:/var/lib/clickhouse
+      - clickhouse_logs:/var/log/clickhouse-server
+volumes:
+  clickhouse_data:
+  clickhouse_logs:
